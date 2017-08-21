@@ -1,0 +1,46 @@
+<ion-header>
+   <ion-navbar>
+      <ion-title text-center>
+         {{ movie.title }}
+      </ion-title>
+      <ion-buttons end>
+         <button ion-button (click)="regularShare()">
+            <ion-icon ios="ios-share" md="md-share"></ion-icon>
+         </button>
+         <button ion-button  (click)="closeModal()"> 
+           <ion-icon name="md-close"></ion-icon>
+         </button>
+      </ion-buttons>
+   </ion-navbar>
+</ion-header>
+
+
+<ion-content  style="background-color: #961823">
+
+<div text-center  >
+<img  padding [src] = movie.image >
+<br>
+<h3 text-center><i><u>Personal Profile</u></i></h3>
+<h6>
+<ion-grid >
+ <ion-row><ion-col col-5>Name</ion-col><ion-col col-1>:</ion-col><ion-col>{{ movie.title }}</ion-col></ion-row>
+ <ion-row><ion-col col-5>City</ion-col><ion-col col-1>:</ion-col><ion-col>{{ movie.city }}</ion-col></ion-row>
+ <ion-row><ion-col col-5>Date Of Birth</ion-col><ion-col col-1>:</ion-col><ion-col>{{ movie.dob.substring(8,10) }}-{{movie.dob.substring(5,7)}}-{{movie.dob.substring(0,4)}}</ion-col></ion-row>
+ <ion-row><ion-col col-5>Birth Time</ion-col><ion-col col-1>:</ion-col><ion-col>{{ movie.birthtime }}</ion-col></ion-row>
+ <ion-row><ion-col col-5>Birth Place</ion-col><ion-col col-1>:</ion-col><ion-col>{{ movie.birthplace }}</ion-col></ion-row>
+ <ion-row><ion-col col-5>Education</ion-col><ion-col col-1>:</ion-col><ion-col>{{ movie.education }}</ion-col></ion-row>
+ <ion-row><ion-col col-5>Occupation</ion-col><ion-col col-1>:</ion-col><ion-col>{{ movie.occupation }}</ion-col></ion-row>
+ <ion-row><ion-col col-5>Monthly Income</ion-col><ion-col col-1>:</ion-col><ion-col>&#8377;{{ movie.monthlyincome }}</ion-col></ion-row>
+ <br>
+ <h3 text-center><i><u>Family Background</u></i></h3><br>
+ <ion-row><ion-col col-5>Father's Name</ion-col><ion-col col-1>:</ion-col><ion-col>{{ movie.fathername }}</ion-col></ion-row>
+ <ion-row><ion-col col-5>Father's Occupation</ion-col><ion-col col-1>:</ion-col><ion-col>{{ movie.fatheroccupation }}</ion-col></ion-row>
+ <ion-row><ion-col col-5>Self Gotra</ion-col><ion-col col-1>:</ion-col><ion-col>{{ movie.gotra }}</ion-col></ion-row>
+ <ion-row><ion-col col-5>Brothers</ion-col><ion-col col-1>:</ion-col><ion-col>{{ movie.brother }}</ion-col></ion-row>
+ <ion-row><ion-col col-5>Sisters</ion-col><ion-col col-1>:</ion-col><ion-col>{{ movie.sister }}</ion-col></ion-row>
+ <ion-row><ion-col col-5>Contact No</ion-col ><ion-col col-1>:</ion-col><ion-col>{{ movie.contact }}</ion-col></ion-row>
+
+</ion-grid>
+</h6>
+</div>
+</ion-content>

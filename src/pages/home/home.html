@@ -1,0 +1,68 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="assets/logo.png">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+<ion-header >
+  <ion-navbar>
+      <button ion-button menuToggle start>
+          <ion-icon name="menu"></ion-icon>
+      </button>  
+      <ion-title class="tit" text-center >
+        Parichay
+      </ion-title>
+      <ion-buttons end>
+       <button ion-button icon-only (click)="addRecord()">
+          <ion-icon name="add"></ion-icon>
+       </button>
+      </ion-buttons>   
+  </ion-navbar>
+</ion-header>
+  <ion-content>
+  <ion-slides pager>
+<ion-slide >
+      <div class="diag" style="background-color: #5ae893" >
+        <ion-icon ios="ios-people" md="md-people" class="ic" ></ion-icon>
+        <h2>Find Your Another Half</h2>
+      </div>
+      <div>
+        <p>
+          Search for a suitable match from the list of hundreds of boys or girls belonging to different castes. 
+        </p>
+      </div>
+    </ion-slide>
+
+    <ion-slide >
+      <div class="diag" style="background-color: #21bfef">
+        <ion-icon ios="ios-cloud-upload" md="md-cloud-upload" class="ic"></ion-icon>
+        <h2>Upload A New Bio-Data</h2>
+      </div>
+      <div>
+        <p>
+          If you are worried about marriage then join us , so that we can help you out to find your another half.
+        </p>
+      </div>
+    </ion-slide>
+
+    <ion-slide >
+      <div class="diag" style="background-color: #da50ed">
+        <ion-icon ios="logo-whatsapp" md="logo-whatsapp" class="ic ico" ></ion-icon>
+        <ion-icon ios="logo-facebook" md="logo-facebook" class="ic ico"></ion-icon>
+        <ion-icon ios="logo-twitter" md="logo-twitter" class="ic ico"></ion-icon><br>
+        <ion-icon ios="logo-google" md="logo-google" class="ic ico"></ion-icon>
+        <ion-icon ios="ios-mail" md="md-mail" class="ic ico"></ion-icon>
+        <ion-icon ios="ios-text" md="md-text" class="ic ico"></ion-icon>
+        <h2>Ask Your Relatives</h2>
+      </div>
+      <div >
+        <p>
+          Share the bio-data with your loved ones to know their point of view.
+        </p>
+      </div>
+    </ion-slide>
+</ion-slides>
+ </ion-content>
+

@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="light">
+    <button ion-button menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Brahmin Samaz</ion-title>  
+    <ion-buttons end>
+      <button ion-button *ngIf="!toggled" (click)="toggleSearch()">
+       <ion-icon  name="search"></ion-icon>
+      </button>
+      <ion-searchbar *ngIf="toggled"  
+                      [formControl]="searchControl" 
+                      (ionInput)="onSearchInput($event)"
+                      (ionCancel)="toggle()"
+                      [showCancelButton] = "true" 
+                      placeholder="Search Name">                
+      </ion-searchbar>
+    </ion-buttons>       
+  </ion-navbar>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-segment [(ngModel)] = "_gender">
+      <ion-segment-button value="male">
+        Boys
+      </ion-segment-button>
+      <ion-segment-button value="female">
+        Girls
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="searching" class="spinner-container">
+    <ion-spinner></ion-spinner>
+  </div>
+  <div *ngIf = " _gender == 'male' " >
+  <ion-list text-wrap  *ngFor="let movie of movies | async | search:searchTerm ">
+      <ion-card *ngIf="movie.gender == 'Male'">
+        <a ion-item (click) = "openModal( movie )">
+            <ion-avatar item-start>
+              <img [src]="movie.image">
+            </ion-avatar>   
+            <h2>{{ movie.title }}</h2>
+            <p>{{ movie.education }} </p>
+            <p>{{ movie.age }} years old</p>       
+        </a>
+      </ion-card>  
+  </ion-list>
+  </div>     
+  <div *ngIf = " _gender == 'female' " >
+  <ion-list text-wrap  *ngFor="let movie of movies | async | search:searchTerm ">
+      <ion-card *ngIf="movie.gender == 'Female'">
+        <a ion-item (click) = "openModal( movie )">
+            <ion-avatar item-start>
+              <img [src]="movie.image">
+            </ion-avatar>   
+            <h2>{{ movie.title }}</h2>
+            <p>{{ movie.education }} </p>
+            <p>{{ movie.age }} years old</p>              
+        </a>
+      </ion-card>  
+  </ion-list>
+  </div>     
+</ion-content>
